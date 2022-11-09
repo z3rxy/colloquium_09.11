@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static Integer size;
+    public static Scanner cin = new Scanner(System.in);
     public static boolean isInteger(String str) {
         try {
             Integer.parseInt(str);
@@ -18,11 +19,8 @@ public class Main {
             return false;
         }
     }
-    public static void main(String[] args) {
-        Scanner cin = new Scanner(System.in);
-
-        String str1 = cin.next(), str2 = cin.next();
-
+    public static String result(String str1, String str2) {
+        //String str1 = cin.next(), str2 = cin.next();
         if(isInteger(str1)|| isDouble(str1)){
             while(isInteger(str1) || isDouble(str1)){
                 System.out.println("Первая строка не должна быть числом. Введите новую строку.");
@@ -182,6 +180,12 @@ public class Main {
         else {
             str1 += str2;
         }
-        System.out.println(str1);
+        return str1;
+    }
+
+    public static void main(String[] args) {
+        String str1 = cin.next(), str2 = cin.next();
+        String str = result(str1, str2);
+        System.out.println(str);
     }
 }
